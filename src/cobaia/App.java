@@ -12,8 +12,11 @@ class App {
     // p1 = ["14:12:56", "22:32:12"]
     Map<String, String> p1 = Ponto.ler("2024-11-25");
     System.out.println(p1);
-    System.out.println("Entrou: " + p1.get("entrada")); // 14:12:56
-    System.out.println("Saiu: " + p1.get("saida")); // 22:32:12
+    System.out.println("Entrou => " + p1.get("entrada")); // 14:12:56
+    System.out.println("Saiu => " + p1.get("saida")); // 22:32:12
+    for (var e : p1.entrySet()) {
+      System.out.println(e.getKey() + " => " + e.getValue());
+    }
 
     // 12 [Marcio, Guilherme]
 

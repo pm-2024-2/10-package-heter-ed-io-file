@@ -24,12 +24,20 @@ class Ponto {
         
         try {
             var linhas = Files.readAllLines(arquivo);
-
+            // [nome,
+            // sobrenome,
+            // data]
+            
             // ESCALÁVEL, ler quantas linhas houver
             for (var linha : linhas) {
-                int i = linha.indexOf(":");
-                ponto.put(linha.substring(0, i),
-                          linha.substring(i + 2));
+                int coluna = linha.indexOf(":");
+                //         01234567890123456
+                // linha = entrada: 07:52:56
+                // coluna = 7
+                // substr(0, coluna) = entrada
+                // substr(col + 2) = 07:52:56
+                ponto.put(linha.substring(0, coluna),
+                          linha.substring(coluna + 2));
             }
 
             // NÃO ESCALÁVEL
